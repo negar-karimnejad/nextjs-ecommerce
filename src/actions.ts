@@ -1,6 +1,5 @@
 "use server";
 
-import { redirect } from "next/navigation";
 import prisma from "./lib/prismadb";
 
 export async function addProduct(formData: FormData) {
