@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import ProductCard from "@/components/ProductCard";
 import ProductsList from "@/components/ProductsList";
 
 async function getProducts() {

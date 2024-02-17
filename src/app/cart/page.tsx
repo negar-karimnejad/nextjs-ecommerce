@@ -6,11 +6,11 @@ function CartPage() {
     <div className="">
       <h1 className="text-xl font-bold mb-5">Shopping Cart</h1>
       {/* cart products */}
-      <div className="flex flex-col gap-3">
-        <div className="border-b border-gray-300 pb-3 card card-side">
+      <div className="flex flex-col gap-2">
+        <div className="border-b border-gray-300 pb-2 card card-side">
           <Image
-            width={50}
-            height={60}
+            width={140}
+            height={170}
             src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
             alt="cart product"
             className="object-cover rounded-lg"
@@ -28,13 +28,13 @@ function CartPage() {
                 <option value="3">3</option>
               </select>
             </form>
-            <p>Total{formatCurrency(399)}</p>
+            <p>Total: {formatCurrency(399)}</p>
           </div>
         </div>
-        <div className="border-b border-gray-300 pb-3 card card-side">
+        <div className="border-b border-gray-300 pb-2 card card-side">
           <Image
-            width={50}
-            height={60}
+            width={140}
+            height={170}
             src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
             alt="cart product"
             className="object-cover rounded-lg"
@@ -52,12 +52,12 @@ function CartPage() {
                 <option value="3">3</option>
               </select>
             </form>
-            <p>Total{formatCurrency(399)}</p>
+            <p>Total: {formatCurrency(399)}</p>
           </div>
         </div>
       </div>
       <div className="mx-auto text-center">
-        <p className="font-bold mt-4 mb-2">Total{formatCurrency(399)}</p>
+        <p className="font-bold mt-4 mb-2">Total: {formatCurrency(399)}</p>
         <button className="btn btn-warning px-5">CHECKOUT</button>
       </div>
     </div>

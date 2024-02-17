@@ -1,6 +1,5 @@
 import { formatCurrency } from "@/lib/formatCurrency";
 import Image from "next/image";
-import Link from "next/link";
 
 function ProductPage() {
   return (
