@@ -1,16 +1,16 @@
 import React from "react";
 
 type InputProps = {
-  required: any;
+  required?: any;
   type: string;
   placeholder: string;
-  name: string;
+  name?: string;
 };
 
 function Input({ required, type, placeholder, name }: InputProps) {
   return (
     <input
-      required
+      required={required ? required : ""}
       className="input input-bordered w-full"
       type={type}
       placeholder={placeholder}

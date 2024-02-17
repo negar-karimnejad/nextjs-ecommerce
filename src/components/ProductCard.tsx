@@ -12,6 +12,7 @@ function ProductCard({ product }: ProductCardProps) {
   const isNow =
     Date.now() - new Date("product.createdAt").getTime() <
     1000 * 60 * 60 * 24 * 7;
+  console.log(product);
 
   return (
     <Link href={`product/${""}`}>
