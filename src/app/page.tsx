@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ProductsList from "@/components/ProductsList";
 import prisma from "../lib/prismadb";
+import ProductCard from "@/components/ProductCard";
 
 export default async function Home() {
   const products = await prisma.product.findMany({
@@ -10,8 +11,13 @@ export default async function Home() {
 
   return (
     <>
-      <Hero />
-      <ProductsList />
+      <Hero products={products} />
+
+      <ProductsList>
+        {products.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </ProductsList>
     </>
   );
 }

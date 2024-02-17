@@ -1,7 +1,13 @@
+import { Product } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
-function Hero() {
+interface HeroProps {
+  products: Product[];
+}
+function Hero({ products }: HeroProps) {
+  console.log(products);
+
   return (
     <div className="hero bg-base-100 rounded-lg mb-10">
       <div className="hero-content flex-col lg:flex-row">

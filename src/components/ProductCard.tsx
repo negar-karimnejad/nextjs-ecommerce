@@ -1,8 +1,13 @@
 import { formatCurrency } from "@/lib/formatCurrency";
+import { Product } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
-function ProductCard({ product }) {
+interface ProductCardProps {
+  product: Product;
+}
+
+function ProductCard({ product }: ProductCardProps) {
   // Calculate if the product created less than 7 days it has the label "NEW"
   const isNow =
     Date.now() - new Date("product.createdAt").getTime() <
