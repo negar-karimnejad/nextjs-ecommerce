@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 
 type ButtonProps = {
   type: "submit" | "reset" | "button" | undefined;
@@ -9,7 +9,7 @@ type ButtonProps = {
 };
 
 function Button({ type, children }: ButtonProps) {
-  const { pending } = useFormStatus();
+  const { pending, } = useFormStatus();
 
   return (
     <button

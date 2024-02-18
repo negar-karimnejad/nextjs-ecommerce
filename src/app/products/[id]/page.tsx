@@ -1,7 +1,36 @@
 import { formatCurrency } from "@/lib/formatCurrency";
+import prisma from "@/lib/prismadb";
+import { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { cache } from "react";
 
-function ProductPage() {
+interface ProductPageProps {
+  params: { id: string };
+}
+
+const getProduct = cache(async (id: string) => {
+  const product = await prisma.product.findUnique({
+    where: { id },
+  });
+  if (!product) notFound();
+  return product;
+});
+
+export async function generateMetadata({
+  params: { id },
+}: ProductPageProps): Promise<Metadata> {
+  const product = await getProduct(id);
+
+  return {
+    title: `${product?.name} - Flowmazon`,
+    description: product.description,
+  };
+}
+
+async function ProductPage({ params: { id } }: ProductPageProps) {
+  const product = await getProduct(id);
+
   return (
     <div className="hero rounded-lg mb-10">
       <div className="hero-content flex-col lg:flex-row">
@@ -9,20 +38,16 @@ function ProductPage() {
           className="object-cover max-w-sm shadow-2xl rounded-lg"
           width={200}
           height={400}
-          src="https://images.pexels.com/photos/18434225/pexels-photo-18434225/free-photo-of-blooming-potted-plant-and-a-wooden-bench-standing-by-a-stone-wall.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-          alt=""
+          src={product.imageUrl}
+          alt={product.name}
           priority
         />
         <div>
-          <h1 className="text-4xl font-bold pb-6">Thorned Heel Slicers</h1>
+          <h1 className="text-4xl font-bold pb-6">{product.name}</h1>
           <div className="card-actions">
-            <div className="badge">{formatCurrency(399)}</div>
+            <div className="badge">{formatCurrency(product.price)}</div>
           </div>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+          <p className="py-6">{product.description}</p>
           <button className="btn btn-primary">
             Add To Cart
             <svg

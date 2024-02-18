@@ -9,7 +9,6 @@ export default async function Home() {
       id: "asc",
     },
   });
-  console.log(products);
 
   return (
     <>
