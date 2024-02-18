@@ -1,26 +1,23 @@
 import Hero from "@/components/Hero";
+import ProductCard from "@/components/ProductCard";
 import ProductsList from "@/components/ProductsList";
-
-async function getProducts() {
-  const res = await fetch("http://localhost:3000/api/products", {
-    method: "GET",
-  });
-  return res.json();
-}
+import prisma from "@/lib/prismadb";
 
 export default async function Home() {
-  const products = await getProducts();
+  const products = await prisma.product.findMany({
+    orderBy: {
+      id: "asc",
+    },
+  });
   console.log(products);
 
   return (
     <>
       <Hero products={products} />
-
       <ProductsList>
-        <></>
-        {/* {products.map((product) => (
+        {products.slice(1).map((product) => (
           <ProductCard product={product} key={product.id} />
-        ))} */}
+        ))}
       </ProductsList>
     </>
   );
