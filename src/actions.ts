@@ -13,13 +13,6 @@ export async function addProduct(formData: FormData) {
   }
 
   try {
-    // const existedProduct = await prisma.product.findUnique({
-    //   where: { name: name },
-    // });
-
-    // if (existedProduct) {
-    //   //
-    // }
     const product = await prisma.product.create({
       data: { name, description, imageUrl, price },
     });
