@@ -37,9 +37,9 @@ async function ProductPage({ params: { id } }: ProductPageProps) {
     <div className="hero rounded-lg mb-10">
       <div className="hero-content flex-col lg:flex-row">
         <Image
-          className="object-cover max-w-sm shadow-2xl rounded-lg"
-          width={200}
-          height={400}
+          className="object-contain shadow-2xl rounded-lg"
+          width={300}
+          height={300}
           src={product.imageUrl}
           alt={product.name}
           priority

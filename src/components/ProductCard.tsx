@@ -15,20 +15,20 @@ function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`products/${product.id}`}>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl">
         <figure>
           <Image
-            className="object-cover h-48"
+            className="object-contain"
             src={product.imageUrl}
-            alt=""
+            alt={product.name}
             width={800}
             height={400}
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{product.name}</h2>
+          <h2 className="card-title">{product.name.slice(0, 30)}...</h2>
           {isNow && <div className="badge badge-secondary my-1">NEW</div>}
-          <p>{product.description}</p>
+          <p className="line-clamp-4">{product.description}</p>
           <div className="card-actions">
             <div className="badge mt-2">{formatCurrency(product.price)}</div>
           </div>

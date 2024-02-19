@@ -10,11 +10,11 @@ function Hero({ products }: HeroProps) {
     <div className="hero bg-base-100 rounded-lg mb-10">
       <div className="hero-content flex-col lg:flex-row">
         <Image
-          className="object-cover max-w-sm shadow-2xl rounded-lg"
-          width={200}
+          className="object-cover shadow-2xl rounded-lg"
+          width={250}
           height={800}
           src={products[0]?.imageUrl}
-          alt=""
+          alt={products[0]?.name}
           priority
         />
         <div>

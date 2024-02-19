@@ -34,7 +34,7 @@ function CartEntry({
           height={170}
           src={product.imageUrl}
           alt={product.name}
-          className="object-cover rounded-lg"
+          className="object-contain rounded-lg"
         />
         <div className="card-body text-gray-600">
           <Link
