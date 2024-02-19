@@ -1,50 +1,29 @@
-import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="footer p-10 px-14 bg-slate-700 text-white">
-      <nav>
-        <h6 className="footer-title">Services</h6>
-        <Link href={""} className="link link-hover">
-          Branding
-        </Link>
-        <Link href={""} className="link link-hover">
-          Design
-        </Link>
-        <Link href={""} className="link link-hover">
-          Marketing
-        </Link>
-        <Link href={""} className="link link-hover">
-          Advertisement
-        </Link>
-      </nav>
-      <nav>
-        <h6 className="footer-title">Company</h6>
-        <Link href={""} className="link link-hover">
-          About us
-        </Link>
-        <Link href={""} className="link link-hover">
-          Contact
-        </Link>
-        <Link href={""} className="link link-hover">
-          Jobs
-        </Link>
-        <Link href={""} className="link link-hover">
-          Press kit
-        </Link>
-      </nav>
-      <nav>
-        <h6 className="footer-title">Legal</h6>
-        <Link href={""} className="link link-hover">
-          Terms of use
-        </Link>
-        <Link href={""} className="link link-hover">
-          Privacy policy
-        </Link>
-        <Link href={""} className="link link-hover">
-          Cookie policy
-        </Link>
-      </nav>
+    <footer className="p-10 bg-neutral text-neutral-content">
+      <div className="footer m-auto max-w-7xl">
+        <nav>
+          <h6 className="footer-title">Services</h6>
+          <a className="link link-hover">Branding</a>
+          <a className="link link-hover">Design</a>
+          <a className="link link-hover">Marketing</a>
+          <a className="link link-hover">Advertisement</a>
+        </nav>
+        <nav>
+          <h6 className="footer-title">Company</h6>
+          <a className="link link-hover">About us</a>
+          <a className="link link-hover">Contact</a>
+          <a className="link link-hover">Jobs</a>
+          <a className="link link-hover">Press kit</a>
+        </nav>
+        <nav>
+          <h6 className="footer-title">Legal</h6>
+          <a className="link link-hover">Terms of use</a>
+          <a className="link link-hover">Privacy policy</a>
+          <a className="link link-hover">Cookie policy</a>
+        </nav>
+      </div>
     </footer>
   );
 }
