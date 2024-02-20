@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "pictureserver.net",
       },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
     ],
   },
 };

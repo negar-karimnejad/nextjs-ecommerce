@@ -16,7 +16,7 @@ function ShoppingCartButton({ cart }: ShoppingCartButtonProps) {
     }
   };
   return (
-    <div className="dropdown dropdown-end">
+    <div className="dropdown dropdown-end flex-none mx-2">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
         <div className="indicator">
           <svg
