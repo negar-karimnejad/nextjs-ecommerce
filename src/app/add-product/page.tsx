@@ -1,19 +1,32 @@
-import { addProduct } from "@/actions";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import { redirect } from "next/navigation";
+import prisma from "@/lib/prismadb";
 
 export const metadata = {
   title: "Add Product - Flowmazon",
 };
 
-function AddProduct() {
-  const addProductHandle = async (formData: FormData) => {
-    "use server";
-    await addProduct(formData);
-    redirect("/");
-  };
+const addProductHandle = async (formData: FormData) => {
+  "use server";
+  
+  const name = formData.get("name")?.toString();
+  const description = formData.get("description")?.toString();
+  const imageUrl = formData.get("imageUrl")?.toString();
+  const price = Number(formData.get("price")) || 0;
 
+  if (!name || !description || !imageUrl || !price) {
+    throw Error("Missing required fields");
+  }
+
+  await prisma.product.create({
+    data: { name, description, imageUrl, price },
+  });
+
+  redirect("/");
+};
+
+function AddProduct() {
   return (
     <div className="max-w-[320px] sm:max-w-[500px] mx-auto">
       <h1 className="font-bold text-xl mb-3">Add Product</h1>
