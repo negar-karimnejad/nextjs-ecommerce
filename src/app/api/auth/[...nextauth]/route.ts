@@ -3,7 +3,7 @@ import { env } from "@/lib/env";
 import { prisma } from "@/lib/prismadb";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client/extension";
-import { AuthOptions, NextAuthOptions } from "next-auth";
+import { AuthOptions } from "next-auth";
 import { Adapter } from "next-auth/adapters";
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
