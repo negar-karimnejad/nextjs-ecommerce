@@ -1,4 +1,3 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getCart } from "@/lib/cart";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
@@ -8,6 +7,7 @@ import Logo from "../../assets/logo.png";
 import Input from "../Input";
 import ShoppingCartButton from "./ShoppingCartButton";
 import UserMenuButton from "./UserMenuButton";
+import { authOptions } from "@/app/api/auth/[...nextauth]/options";
 
 async function searchProducts(formData: FormData) {
   "use server";
