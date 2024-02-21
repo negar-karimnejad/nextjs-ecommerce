@@ -1,5 +1,5 @@
-import Button from "@/components/ui/Button";
-import Input from "@/components/ui/Input";
+import Button from "@/components/Button";
+import Input from "@/components/Input";
 import { prisma } from "@/lib/prismadb";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import Logo from "../../assets/logo.png";
-import Input from "../ui/Input";
+import Input from "../Input";
 import ShoppingCartButton from "./ShoppingCartButton";
 import UserMenuButton from "./UserMenuButton";
 
