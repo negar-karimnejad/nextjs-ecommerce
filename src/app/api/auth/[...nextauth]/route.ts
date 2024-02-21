@@ -2,7 +2,7 @@ import { mergeAnonymousCartIntoUserCart } from "@/lib/cart";
 import { env } from "@/lib/env";
 import { prisma } from "@/lib/prismadb";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import { PrismaClient } from "@prisma/client/extension";
+import { PrismaClient } from "@prisma/client";
 import { NextAuthOptions } from "next-auth";
 import { Adapter } from "next-auth/adapters";
 import NextAuth from "next-auth/next";
@@ -11,7 +11,6 @@ import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma as PrismaClient) as Adapter,
-
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_ID,
@@ -22,7 +21,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: env.GITHUB_SECRET,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     session({ session, user }) {
       session.user.id = user.id;
@@ -37,4 +35,5 @@ export const authOptions: NextAuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
+
 export { handler as GET, handler as POST };
