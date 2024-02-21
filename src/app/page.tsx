@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import PaginationBar from "@/components/PaginationBar";
 import ProductCard from "@/components/ProductCard";
 import ProductsList from "@/components/ProductsList";
-import prisma from "@/lib/prismadb";
+import {prisma} from "@/lib/prismadb";
 
 interface HomeProps {
   searchParams: { page: string };

@@ -1,5 +1,5 @@
 import { formatCurrency } from "@/lib/formatCurrency";
-import prisma from "@/lib/prismadb";
+import { prisma } from "@/lib/prismadb";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
