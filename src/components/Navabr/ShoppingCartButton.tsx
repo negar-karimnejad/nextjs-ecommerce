@@ -3,7 +3,6 @@
 import { ShoppingCart } from "@/lib/cart";
 import { formatCurrency } from "@/lib/formatCurrency";
 import Link from "next/link";
-import React from "react";
 
 interface ShoppingCartButtonProps {
   cart: ShoppingCart | null;

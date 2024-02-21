@@ -1,6 +1,5 @@
 import { getCart } from "@/lib/cart";
 import { formatCurrency } from "@/lib/formatCurrency";
-import Image from "next/image";
 import CartEntry from "./CartEntry";
 import { setProductQuantity } from "./actions";
 
@@ -14,7 +13,6 @@ async function CartPage() {
   return (
     <div className="">
       <h1 className="text-xl font-bold mb-5">Shopping Cart</h1>
-      {/* cart products */}
       <div className="flex flex-col gap-2">
         {cart?.items.map((cartItem) => (
           <CartEntry

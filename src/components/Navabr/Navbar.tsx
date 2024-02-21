@@ -1,13 +1,13 @@
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { getCart } from "@/lib/cart";
+import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import Logo from "../../assets/logo.png";
 import Input from "../ui/Input";
-import { redirect } from "next/navigation";
 import ShoppingCartButton from "./ShoppingCartButton";
-import { getCart } from "@/lib/cart";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import UserMenuButton from "./UserMenuButton";
-import { getServerSession } from "next-auth";
 
 async function searchProducts(formData: FormData) {
   "use server";

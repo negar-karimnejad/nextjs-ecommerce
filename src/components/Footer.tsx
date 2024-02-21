@@ -1,4 +1,3 @@
-
 function Footer() {
   return (
     <footer className="p-10 bg-neutral text-neutral-content">

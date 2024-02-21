@@ -1,10 +1,9 @@
 "use client";
 
 import { Session } from "next-auth";
-import Image from "next/image";
-import Link from "next/link";
-import profilePicPlaceholder from "../../assets/profile-pic-placeholder.png";
 import { signIn, signOut } from "next-auth/react";
+import Image from "next/image";
+import profilePicPlaceholder from "../../assets/profile-pic-placeholder.png";
 
 interface UserMenuButtonProps {
   session: Session | null;

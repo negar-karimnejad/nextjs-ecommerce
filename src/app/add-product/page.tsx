@@ -1,8 +1,8 @@
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-import { redirect } from "next/navigation";
-import {prisma} from "@/lib/prismadb";
+import { prisma } from "@/lib/prismadb";
 import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export const metadata = {
